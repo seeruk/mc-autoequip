@@ -15,9 +15,6 @@ import org.bukkit.plugin.java.JavaPlugin
  */
 class Main : JavaPlugin() {
     override fun onEnable() {
-        val listener = BreakListener()
-
-        server.pluginManager.registerEvents(listener, this)
-        server.logger.info("Hello, AutoEquip!")
+        server.pluginManager.registerEvents(BreakListener(), this)
     }
 }
