@@ -1,6 +1,0 @@
-name: AutoEquip
-version: 0.1-SNAPSHOT
-author: Elliot Wright
-main: dev.seeruk.mc.autoequip.Main
-website: https://github.com/seeruk/mc-autoequip
-api-version: "1.14"

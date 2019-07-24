@@ -1,9 +1,6 @@
 package dev.seeruk.mc.autoequip
 
-import org.bukkit.Server
-import org.bukkit.event.EventHandler
-import org.bukkit.event.Listener
-import org.bukkit.event.player.PlayerItemBreakEvent
+import dev.seeruk.mc.autoequip.event.BreakListener
 import org.bukkit.plugin.java.JavaPlugin
 
 /**
@@ -18,16 +15,9 @@ import org.bukkit.plugin.java.JavaPlugin
  */
 class Main : JavaPlugin() {
     override fun onEnable() {
-        val listener = BreakListener(server)
+        val listener = BreakListener()
 
         server.pluginManager.registerEvents(listener, this)
         server.logger.info("Hello, AutoEquip!")
-    }
-}
-
-class BreakListener(val server: Server) : Listener {
-    @EventHandler
-    fun onPlayerItemBreak(evt: PlayerItemBreakEvent) {
-        this.server.logger.info("${evt.player.displayName} broke ${evt.brokenItem.type.name}")
     }
 }
